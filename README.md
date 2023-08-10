@@ -114,7 +114,7 @@ To run tests, run the following command:
 
 👤 **Author**
 
-- GitHub: [@RKanyoro](https://github.com/RKanyoro)
+- GitHub: [@RKanyoro](https://github.com/kanyorok)
 - Twitter: [@CarlosMbugua](https://twitter.com/CarlosMbugua)
 - LinkedIn: [Robert Mbugua](https://www.linkedin.com/in/robert-mbugua-a8745093/)
 
@@ -138,7 +138,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]()
+Feel free to check the [issues page](https://github.com/Kanyorok/bookstore/issues)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
