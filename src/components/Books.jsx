@@ -52,30 +52,36 @@ const Books = () => {
   }, [dispatch]);
 
   return (
-    <div className="flex flex-col px-3 max-w-6xl mx-auto">
-      {booksLoading ? (
-        <p>Loading...</p>
-      ) : (
-        books.map((book) => <Specificbook key={book.title} book={book} />)
-      )}
-      <div className="bg-white border-b shadow-lg rounded-sm w-full mt-3 mb-3 px-5">
-        <h2 className="text-2xl font-bold">Add New Book</h2>
-        <div className="flex">
-          <form className="mb-7">
-            <label htmlFor="book-title">
-              <input className="border-2 border-gray-400" placeholder="Book Title" type="text" value={bookState.title} name="title" required onChange={handleNewBook} />
-              <input className="border-2 border-gray-400 ml-5" placeholder="Author" type="text" value={bookState.author} name="author" onChange={handleNewBook} />
-            </label>
-            <select value={bookState.category} name="category" onChange={handleNewBook} placeholder="Author">
-              <option value="Action">Action</option>
-              <option value="Fiction">Fiction</option>
-              <option value="Non-Fiction">Non-Fiction</option>
-            </select>
-            <button className="border-2 border-black ml-5 px-4" type="submit" onClick={handleAddBook}>Add Book</button>
-          </form>
+    <>
+      <div className="flex flex-col px-3 max-w-6xl mx-auto">
+        {booksLoading ? (
+          <p>Loading...</p>
+        ) : (
+          books.map((book) => <Specificbook key={book.title} book={book} />)
+        )}
+        <hr />
+      </div>
+      <div className="bg-white mt-4 w-full">
+        <div className="bg-white rounded-sm w-full mt-3 px-5 max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold mt-4">Add New Book</h2>
+          <div className="flex w-full mt-3">
+            <form className="w-full">
+              <label htmlFor="book-title">
+                <input className="border-2 w-1/3 border-gray-400 p-4 mr-3" placeholder="Book Title" type="text" value={bookState.title} name="title" required onChange={handleNewBook} />
+                <input className="border-2 w-1/3 border-gray-400 p-4 mr-3" placeholder="Author" type="text" value={bookState.author} name="author" onChange={handleNewBook} />
+              </label>
+              <select className="border-2 border-gray-400 p-4" value={bookState.category} name="category" onChange={handleNewBook} placeholder="Category">
+                <option value="">Category</option>
+                <option value="Action">Action</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+              </select>
+              <button className="ml-5 px-5 pb-5 pt-5 text-white bg-[#0290ff]" type="submit" onClick={handleAddBook}>Add Book</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
