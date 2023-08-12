@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { v4 as itemIdV4 } from 'uuid';
 import Specificbook from './Specificbook';
-import { addBook } from '../Redux/books/bookSlice';
+import { addNewBook as addBookItem, retrieveBooks } from '../Redux/books/bookSlice';
 
 const Books = () => {
   const { books } = useSelector((state) => state.books);
@@ -26,9 +27,10 @@ const Books = () => {
     e.preventDefault();
     if (bookState.author && bookState.title) {
       const newBook = {
-        item_id: 'item4',
+        item_id: itemIdV4(),
         title: bookState.title,
         author: bookState.author,
+        category: 'not-provided',
       };
 
       setBookState({
@@ -36,15 +38,16 @@ const Books = () => {
         author: '',
       });
 
-      dispatch(addBook(newBook));
+      dispatch(addBookItem(newBook));
     }
   };
 
   useEffect(() => {
+    dispatch(retrieveBooks());
     setTimeout(() => {
       setBooksLoading(false);
     }, 2000);
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="flex flex-col px-3 max-w-6xl mx-auto">
