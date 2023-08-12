@@ -4,7 +4,7 @@ import Specificbook from './Specificbook';
 import { addBook } from '../Redux/books/bookSlice';
 
 const Books = () => {
-  const { bookItems } = useSelector((state) => state.books);
+  const { books } = useSelector((state) => state.books);
   const [booksLoading, setBooksLoading] = useState(true);
   const [bookState, setBookState] = useState({
     title: '',
@@ -51,7 +51,7 @@ const Books = () => {
       {booksLoading ? (
         <p>Loading...</p>
       ) : (
-        bookItems.map((book) => <Specificbook key={book.title} book={book} />)
+        books.map((book) => <Specificbook key={book.title} book={book} />)
       )}
       <div className="bg-white border-b shadow-lg rounded-sm w-full mt-3 mb-3 px-5">
         <h2 className="text-2xl font-bold">Add New Book</h2>
