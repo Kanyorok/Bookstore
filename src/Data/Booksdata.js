@@ -1,17 +1,27 @@
 const books = [
   {
-    title: "The Handmaid's Tale",
-    author: 'Suzanne Collins',
+    item_id: 'item1',
+    title: 'The Great Gatsby',
+    author: 'John Smith',
     category: 'Fiction',
-    completed: 81,
-    currentChapter: 17,
+    completed: 61,
+    currentChapter: 10,
   },
   {
-    title: 'Great Expectations',
-    author: 'Suzanne Collins',
-    category: 'Classics',
-    completed: 71,
-    currentChapter: 12,
+    item_id: 'item2',
+    title: 'Anna Karenina',
+    author: 'Leo Tolstoy',
+    category: 'Fiction',
+    completed: 60,
+    currentChapter: 20,
+  },
+  {
+    item_id: 'item3',
+    title: 'The Selfish Gene',
+    author: 'Richard Dawkins',
+    category: 'Nonfiction',
+    completed: 91,
+    currentChapter: 18,
   },
 ];
 
