@@ -10,6 +10,7 @@ const Books = () => {
   const [bookState, setBookState] = useState({
     title: '',
     author: '',
+    category: '',
   });
 
   const dispatch = useDispatch();
@@ -30,12 +31,13 @@ const Books = () => {
         item_id: itemIdV4(),
         title: bookState.title,
         author: bookState.author,
-        category: 'not-provided',
+        category: bookState.category,
       };
 
       setBookState({
         title: '',
         author: '',
+        category: '',
       });
 
       dispatch(addBookItem(newBook));
@@ -64,6 +66,11 @@ const Books = () => {
               <input className="border-2 border-gray-400" placeholder="Book Title" type="text" value={bookState.title} name="title" required onChange={handleNewBook} />
               <input className="border-2 border-gray-400 ml-5" placeholder="Author" type="text" value={bookState.author} name="author" onChange={handleNewBook} />
             </label>
+            <select value={bookState.category} name="category" onChange={handleNewBook} placeholder="Author">
+              <option value="Action">Action</option>
+              <option value="Fiction">Fiction</option>
+              <option value="Non-Fiction">Non-Fiction</option>
+            </select>
             <button className="border-2 border-black ml-5 px-4" type="submit" onClick={handleAddBook}>Add Book</button>
           </form>
         </div>
